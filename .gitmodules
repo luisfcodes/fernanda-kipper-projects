@@ -1,0 +1,3 @@
+[submodule "frontend-challenge"]
+	path = frontend-challenge
+	url = https://github.com/Rocketseat/frontend-challenge
