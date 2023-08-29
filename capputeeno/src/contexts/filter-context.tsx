@@ -8,7 +8,7 @@ export const FilterContext = createContext({
   search: '',
   page: 0,
   type: FilterTypes.ALL,
-  priority: PriorityTypes.NEWS,
+  priority: PriorityTypes.POPULARITY,
   setPriority: (priority: PriorityTypes) => {},
   setSearch: (search: string) => {},
   setPage: (page: number) => {},
@@ -23,7 +23,7 @@ export function FilterContextProvider({children}: FilterContextProviderProps){
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(0)
   const [type, setType] = useState(FilterTypes.ALL)
-  const [priority, setPriority] = useState(PriorityTypes.NEWS)
+  const [priority, setPriority] = useState(PriorityTypes.POPULARITY)
 
   return (
     <FilterContext.Provider value={{search, page, type, priority, setSearch, setPage, setType, setPriority}}>

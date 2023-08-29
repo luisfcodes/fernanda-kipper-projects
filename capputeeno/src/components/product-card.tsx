@@ -1,3 +1,4 @@
+import { formatValue } from "@/utils/format-price";
 import Image from "next/image";
 import { styled } from "styled-components";
 
@@ -25,27 +26,38 @@ const Card = styled.div`
   }
 
   div {
-    width: 228px;
-    height: 1px;
-    margin: 0.5rem 0;
-    background-color: var(--shapes);
+    padding: 0.5rem 0;
+    
+    > div {
+      width: 228px;
+      height: 1px;
+      margin: 0.5rem 0;
+      padding: 0;
+      background-color: var(--shapes);
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 150%;
+      color: var(--shapes-dark);
+    }
   }
 
-  p {
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 150%;
-    color: var(--shapes-dark);
-  }
+  
 `
 
-export function ProductCard(props: ProductCardProps){
+export function ProductCard(props: ProductCardProps) {
+  const priceFormatted = formatValue(props.price)
+
   return (
     <Card>
-      <Image src={props.image_url} alt={props.title} width={256} height={300}/>
-      <h3>{props.title}</h3>
-      <div></div>
-      <p>{props.price}</p>
+      <Image src={props.image_url} alt={props.title} width={256} height={300} />
+      <div>
+        <h3>{props.title}</h3>
+        <div></div>
+        <p>{priceFormatted}</p>
+      </div>
     </Card>
   )
 }
