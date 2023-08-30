@@ -15,20 +15,32 @@ const TagHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 160px;
+  padding: 0.75rem 1.5rem; 
 
   > div {
     display: flex;
     align-items: center;
     gap: 1.5rem;
   }
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}){
+    padding: 1.25rem 10rem;
+  }
 `
 
 const Logo = styled.a`
   color: var(--logo-color);
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   line-height: 150%;
+
+  @media (min-width: ${props => props.theme.tabletBreakpoint}){
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: ${props => props.theme.desktopBreakpoint}){
+    font-size: 2.5rem;
+  }
 `
 
 export function Header() {

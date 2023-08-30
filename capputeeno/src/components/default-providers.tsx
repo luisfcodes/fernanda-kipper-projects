@@ -6,7 +6,8 @@ import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  desktopBreakpoint: '768px',
+  desktopBreakpoint: '968px',
+  tabletBreakpoint: '768px',
 }
 
 interface DefaultProvidersProps {
