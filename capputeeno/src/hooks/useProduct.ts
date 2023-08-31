@@ -9,13 +9,15 @@ const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
     API_URL,
     { 
       query: `
-        Product(id: "${id}"){
-          name
-          description
-          category
-          price_in_cents
-          image_url
-          created_at
+        query {
+          Product(id: "${id}"){
+            name
+            description
+            category
+            price_in_cents
+            image_url
+            created_at
+          }
         }
       `
     }

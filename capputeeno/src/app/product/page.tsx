@@ -21,8 +21,8 @@ const Container = styled.div`
     gap: 2rem;
 
     img {
-      
-      
+      width: 50%;
+      height: auto;
     }
 
     > div {
