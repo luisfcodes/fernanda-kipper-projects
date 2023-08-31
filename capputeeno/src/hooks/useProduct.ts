@@ -11,6 +11,7 @@ const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
       query: `
         query {
           Product(id: "${id}"){
+            id
             name
             description
             category
