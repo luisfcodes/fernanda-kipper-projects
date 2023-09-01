@@ -10,6 +10,8 @@
   --shapes-dark: #09090A;
   --delete-color: #DE3838;
   --orange-low: #FFA585;
+  --border-color: #A8A8B3;
+  --success-color: #51B853;
 }
 
 * {
