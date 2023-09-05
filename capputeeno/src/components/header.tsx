@@ -5,6 +5,7 @@ import { Saira_Stencil_One } from "next/font/google"
 import { PrimaryInputWSearchIcon } from "./primary-input"
 import { CartControl } from "./cart-control"
 import { useFilter } from "@/hooks/useFilter"
+import { useRouter } from "next/navigation"
 
 const sairaStencilOne = Saira_Stencil_One({
   weight: ['400'],
@@ -33,6 +34,7 @@ const Logo = styled.a`
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 150%;
+  cursor: pointer;
 
   @media (min-width: ${props => props.theme.tabletBreakpoint}){
     font-size: 1.5rem;
@@ -44,12 +46,12 @@ const Logo = styled.a`
 `
 
 export function Header() {
-
+  const router = useRouter()
   const {setSearch, search} = useFilter()
 
   return (
     <TagHeader>
-      <Logo className={sairaStencilOne.className}>Capputeeno</Logo>
+      <Logo className={sairaStencilOne.className} onClick={() => router.push("/")}>Capputeeno</Logo>
       <div>
         <PrimaryInputWSearchIcon
           value={search}
